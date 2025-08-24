@@ -20,11 +20,11 @@ def testDomain(domain):
             print("\033[0;32m[+] \033[1;36m[Domain]\033[0m: {} \033[1;36m[Result]\033[0m: \033[1;33mLive.".format(domain))
         else:
             print("\033[0;31m[-] \033[1;36m[Domain]\033[0m: {} \033[1;36m[Result]\033[0m: \033[0;31mDead.".format(domain))
-    except rq.ConnectionError:
+    except req.exceptions.ConnectionError:
         pass
-    except rq.ChunkedEncodingError:
+    except req.exceptions.ChunkedEncodingError:
         pass
-    except rq.TooManyRedirects:
+    except req.exceptions.TooManyRedirects:
             pass
 
 def openDomainsFile(file):
